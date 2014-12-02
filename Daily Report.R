@@ -1,8 +1,8 @@
-source('~/Dropbox/Tableau/Health Data/readGoogleSheet2.R')
+source('~/Documents/Github/Health Data/readGoogleSheet.R')
 library(lubridate)
 library(xlsx)
 library(dplyr)
-setwd("~/Dropbox/Tableau/Health Data/")
+setwd("~/Documents/Github/Health Data/")
 
 activity_url<-'https://docs.google.com/spreadsheets/d/1tN9t7Npu120wuuSzBvCimSnEzxEpwFb0XkFb0JoiP-Q/pubhtml'
 sleep_url<-'https://docs.google.com/spreadsheets/d/1N-4-Xv0t-3kTzCjq5zD4aqTe2S-y_x5BJAFU48ZpCqQ/pubhtml'
@@ -42,10 +42,10 @@ activity_summary<-my_activity %>%
 
 
 up_summary<-merge(activity_summary,sleep_summary,by="Month") %>%
-  write.xlsx(file = "up_report.xlsx",sheetName = "Summary",col.names = TRUE, row.names = FALSE)
+  write.xlsx(file = "~/Documents/Github/Health Data/up_report_output.xlsx",sheetName = "Summary",col.names = TRUE, row.names = FALSE)
 
 up_details<-merge(my_activity,my_sleep,by="ObservationDate") %>%
-  write.xlsx(file = "up_report.xlsx",sheetName = "Details",col.names = TRUE,append = TRUE,row.names = FALSE)
+  write.xlsx(file = "~/Documents/Github/Health Data/up_report_output.xlsx",sheetName = "Details",col.names = TRUE,append = TRUE,row.names = FALSE)
 
 
 
