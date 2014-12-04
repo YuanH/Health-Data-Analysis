@@ -42,10 +42,10 @@ activity_summary<-my_activity %>%
 
 
 up_summary<-merge(activity_summary,sleep_summary,by="Month") %>%
-  write.xlsx(file = "~/Documents/Github/Health Data/up_report_output.xlsx",sheetName = "Summary",col.names = TRUE, row.names = FALSE)
+  write.xlsx(file = "up_report_output.xlsx",sheetName = "Summary",col.names = TRUE, row.names = FALSE)
 
 up_details<-merge(my_activity,my_sleep,by="ObservationDate") %>%
-  write.xlsx(file = "~/Documents/Github/Health Data/up_report_output.xlsx",sheetName = "Details",col.names = TRUE,append = TRUE,row.names = FALSE)
+  write.xlsx(file = "up_report_output.xlsx",sheetName = "Details",col.names = TRUE,append = TRUE,row.names = FALSE)
 
 
 
